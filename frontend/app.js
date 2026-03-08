@@ -246,6 +246,9 @@ registerForm.addEventListener("submit", async (event) => {
     showMessage("success", data.message || "Registration successful.");
 
     registerForm.reset();
+    switchTab("login");
+    const loginEmailInput = document.getElementById("login-email");
+    if (loginEmailInput) loginEmailInput.value = email;
   } catch (error) {
     console.error("Registration error:", error);
     showMessage("error", "Network error. Please check the backend server.");
